@@ -5407,7 +5407,7 @@ w2utils.event = {
                 if (rec.w2ui && rec.w2ui.changes != null) {
                     // 最後のセルだけ、changesオブジェクトに格納されないため
                     // セルに仕込んでおいたlast_columnの有無をみて、changesオブジェクトにカラム名をkeyにして空文字を代入
-                    if (rec.w2ui.changes.hasOwnProperty('last_column') == true) {
+                    if (rec.w2ui.changes.length > 1 && rec.w2ui.changes.hasOwnProperty('last_column') == true) {
                       changes.push($.extend(true, { 'recid': rec.recid }, {[rec.w2ui.changes.last_column]: ''}));
                     }
                     else {
